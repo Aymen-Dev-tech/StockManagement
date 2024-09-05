@@ -25,31 +25,7 @@ namespace StockManagement
         public MainWindow()
         {
             InitializeComponent();
-            Loaded += MainWindow_Loaded;
         }
-
-        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            await CheckForUpdatesAsync();
-        }
-
-        private async Task CheckForUpdatesAsync()
-        {
-            try
-            {
-                using (var mgr = new UpdateManager("C:\\Users\\Ayn\\source\\repos\\StockManagement\\Releases"))
-                {
-                    await mgr.UpdateApp();
-                    MessageBox.Show("Application updated successfully!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while updating: {ex.Message}");
-            }
-        }
-
-
 
     }
 }
