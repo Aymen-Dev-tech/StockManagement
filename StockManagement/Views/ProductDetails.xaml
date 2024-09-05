@@ -1,0 +1,81 @@
+﻿<Page
+    x:Class="StockManagement.Views.ProductDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:StockManagement.Components"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:StockManagement.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ProductDetails"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <BitmapImage x:Key="DefaultImage" UriSource="../assets/productPlaceholder.jpg" />
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <components:Navbar DataContext="{Binding NavbarViewModel}" />
+
+        <StackPanel
+            Grid.Column="1"
+            Margin="60,60"
+            Orientation="Horizontal">
+            <Border
+                Grid.Column="1"
+                VerticalAlignment="Top"
+                BorderBrush="Black"
+                BorderThickness="2"
+                CornerRadius="2">
+                <Image
+                    Width="200"
+                    Height="120"
+                    Source="{Binding Product.ProductImage, FallbackValue={StaticResource DefaultImage}, TargetNullValue={StaticResource DefaultImage}}" />
+            </Border>
+            <StackPanel
+                Grid.Column="2"
+                Margin="20,0,0,0"
+                Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" Text="Product Code: " />
+                    <TextBlock Text="{Binding Product.ProductCode}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" Text="Product Name: " />
+                    <TextBlock Text="{Binding Product.ProductName}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" Text="In Stock: " />
+                    <TextBlock Text="{Binding Product.Quantity}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" Text="Max Quantity: " />
+                    <TextBlock Text="{Binding Product.MaxQuantity}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" Text="Min Quantity: " />
+                    <TextBlock Text="{Binding Product.MinQuantity}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" Text="Last Restock Date: " />
+                    <TextBlock Text="{Binding Product.LastRestockTime}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" Text="Last Usage Date: " />
+                    <TextBlock Text="{Binding Product.LastUsageTime}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" Text="Category Code: " />
+                    <TextBlock Text="{Binding Product.CategoryCode}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" Text="Category Name: " />
+                    <TextBlock Text="{Binding Product.CategoryName}" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
