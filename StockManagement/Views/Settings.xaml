@@ -21,14 +21,13 @@
             Grid.Column="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Background="AliceBlue"
             Orientation="Vertical">
             <Label Content="Current Installed Version" />
 
             <TextBox
                 x:Name="CurrentVersionTextBox"
                 IsReadOnly="True"
-                Text="{Binding CurrentInstalledVersion}" />
+                Text="{Binding CurrentInstalledVersion, Mode=TwoWay}" />
 
             <Button
                 x:Name="UpdateButton"

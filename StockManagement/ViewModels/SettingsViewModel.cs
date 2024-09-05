@@ -3,6 +3,7 @@ using StockManagement.Commands;
 using StockManagement.Stores;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,6 +45,9 @@ namespace StockManagement.ViewModels
         {
             NavbarViewModel = navbarViewModel;
             this._isUpdateAvailable = false;
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo version = FileVersionInfo.GetVersionInfo(assembly.Location);
+            this._currentInstalledVersion = version.FileVersion.ToString();    
             CheckForUpdate = new CheckForUpdateCommand(this);
             InstallUpdate = new InstallUpdateCommand(this);
         }
@@ -51,9 +55,8 @@ namespace StockManagement.ViewModels
 
         public async Task InitializeTheUpdateManager()
         {
-            _updateManager = await UpdateManager
+            this._updateManager = await UpdateManager
                 .GitHubUpdateManager(@"https://github.com/Aymen-Dev-tech/StockManagement");
-            _currentInstalledVersion = _updateManager.CurrentlyInstalledVersion().ToString();
         }
     }
 }
