@@ -8,6 +8,7 @@ using StockManagement.Commands;
 using StockManagement.DALs;
 using StockManagement.Models;
 using StockManagement.Stores;
+using System.Windows.Media;
 namespace StockManagement.ViewModels
 {
     public class AddProduct : ViewModelBase

@@ -29,14 +29,6 @@ namespace StockManagement.ViewModels
             set { _filteredProductsCategories = value; OnPropertyChanged(nameof(FilteredProductsCategories)); }
         }
 
-        private string _searchKey;
-        public string SearchKey
-        {
-            get => _searchKey;
-            set { _searchKey = value; OnPropertyChanged(nameof(SearchKey)); RestFilteredProducts(); }
-        }
-
-
         private OrdersProductsCategories _selectedProduct;
         public OrdersProductsCategories SelectedProduct
         {
@@ -74,10 +66,10 @@ namespace StockManagement.ViewModels
             CreateOrderCommand = new OrderCommand(this, productsMapper);
 
         }
-        private void RestFilteredProducts()
-        {
-            if (string.IsNullOrEmpty(_searchKey)) FilteredProductsCategories = new ObservableCollection<OrdersProductsCategories>(ProductsCategories);
+        protected override void RestFilteredProducts()
 
+        {
+            FilteredProductsCategories = new ObservableCollection<OrdersProductsCategories>(ProductsCategories);
         }
 
     }

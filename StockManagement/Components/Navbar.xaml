@@ -12,20 +12,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
-        <Border Padding="10,10" Background="#66AFFF">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto" />
-                </Grid.ColumnDefinitions>
-
+        <Border Padding="30,10" Background="#66AFFF">
+            <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
                 <TextBlock
                     Margin="0,40,0,60"
                     HorizontalAlignment="Center"
@@ -33,92 +21,27 @@
                     FontWeight="Bold"
                     Foreground="AliceBlue"
                     Text="StockManagement" />
+                <local:SideBarItem
+                    IconPath="../assets/home.png"
+                    NavigationCommand="{Binding HomeNavigateCommand}"
+                    Text="Home" />
 
-                <StackPanel
-                    Grid.Row="1"
-                    Margin="0,0,0,4"
-                    Orientation="Horizontal">
-                    <Image
-                        Width="48"
-                        Height="48"
-                        VerticalAlignment="Center"
-                        Source="../assets/home.png" />
-                    <Button
-                        Margin="16,0,0,0"
-                        VerticalAlignment="Center"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Command="{Binding HomeNavigateCommand}"
-                        Content="Home"
-                        FontSize="18"
-                        Foreground="AliceBlue" />
+                <local:SideBarItem
+                    IconPath="../assets/box.png"
+                    NavigationCommand="{Binding ProductsNavigateCommand}"
+                    Text="Products" />
 
-                </StackPanel>
+                <local:SideBarItem
+                    IconPath="../assets/basket.png"
+                    NavigationCommand="{Binding OrdersNavigateCommand}"
+                    Text="Orders" />
 
-                <StackPanel
-                    Grid.Row="2"
-                    Margin="0,0,0,4"
-                    Orientation="Horizontal">
-                    <Image
-                        Width="48"
-                        Height="48"
-                        VerticalAlignment="Center"
-                        Source="../assets/box.png" />
-                    <Button
-                        Margin="16,0,0,0"
-                        VerticalAlignment="Center"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Command="{Binding ProductsNavigateCommand}"
-                        Content="Products"
-                        FontSize="18"
-                        Foreground="AliceBlue" />
-                </StackPanel>
-                <StackPanel
-                    Grid.Row="3"
-                    Margin="0,0,0,4"
-                    Orientation="Horizontal">
-                    <Image
-                        Width="48"
-                        Height="48"
-                        VerticalAlignment="Center"
-                        Source="../assets/basket.png" />
-                    <Button
-                        Margin="16,0,0,0"
-                        VerticalAlignment="Center"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Command="{Binding OrdersNavigateCommand}"
-                        Content="Orders"
-                        FontSize="18"
-                        Foreground="AliceBlue" />
+                <local:SideBarItem
+                    IconPath="../assets/settings.png"
+                    NavigationCommand="{Binding SettingsNavigateCommand}"
+                    Text="Settings" />
 
-                </StackPanel>
-                <StackPanel
-                    Grid.Row="4"
-                    Margin="0,0,0,4"
-                    Orientation="Horizontal">
-                    <Image
-                        Width="48"
-                        Height="48"
-                        VerticalAlignment="Center"
-                        Source="../assets/settings.png" />
-                    <Button
-                        Margin="16,0,0,0"
-                        VerticalAlignment="Center"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Command="{Binding SettingsNavigateCommand}"
-                        Content="Settings"
-                        FontSize="18"
-                        Foreground="AliceBlue" />
-
-                </StackPanel>
-
-
-
-
-            </Grid>
+            </StackPanel>
         </Border>
 
     </Grid>

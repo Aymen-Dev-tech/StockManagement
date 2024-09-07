@@ -29,7 +29,6 @@ namespace StockManagement.Commands
                 _addProduct.ImageUrl =  openFileDialog.FileName;
             }
 
-            //throw new NotImplementedException();
         }
     }
 }

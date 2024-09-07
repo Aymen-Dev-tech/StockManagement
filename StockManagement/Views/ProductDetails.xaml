@@ -24,17 +24,8 @@
             Grid.Column="1"
             Margin="60,60"
             Orientation="Horizontal">
-            <Border
-                Grid.Column="1"
-                VerticalAlignment="Top"
-                BorderBrush="Black"
-                BorderThickness="2"
-                CornerRadius="2">
-                <Image
-                    Width="200"
-                    Height="120"
-                    Source="{Binding Product.ProductImage, FallbackValue={StaticResource DefaultImage}, TargetNullValue={StaticResource DefaultImage}}" />
-            </Border>
+
+            <components:ProductImage ImagePath="{Binding Product.ProductImage}" />
             <StackPanel
                 Grid.Column="2"
                 Margin="20,0,0,0"

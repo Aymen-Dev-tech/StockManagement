@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Media;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,21 +35,6 @@ namespace StockManagement.Models
 
         public int Quantity { get => quantity; set => quantity = value; }
 
-        public void Create(ProductModel product)
-        {
-            //insert product to db
-        }
-
-        public ProductModel GetProduct(string productName)
-        {
-            return new ProductModel();
-        }
-        
-        public void RemoveProduct(int Code)
-        {
-            //remove by code
-        }
-
-
+       
     }
 }

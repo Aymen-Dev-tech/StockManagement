@@ -312,8 +312,18 @@
     <Compile Include="Components\Navbar.xaml.cs">
       <DependentUpon>Navbar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\ProductImage.xaml.cs">
+      <DependentUpon>ProductImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\SideBarItem.xaml.cs">
+      <DependentUpon>SideBarItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\StatisticsCard.xaml.cs">
+      <DependentUpon>StatisticsCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\InversBoolToVisibilty.cs" />
     <Compile Include="Converters\InversEditMode.cs" />
+    <Compile Include="Converters\StringToImageSourceConvertor.cs" />
     <Compile Include="DALs\CategoryMapper.cs" />
     <Compile Include="DALs\ProductMapper.cs" />
     <Compile Include="Models\ProductsCategories.cs" />
@@ -336,6 +346,18 @@
     <Page Include="Components\Navbar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\ProductImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\SideBarItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\StatisticsCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

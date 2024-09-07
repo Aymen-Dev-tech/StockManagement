@@ -36,12 +36,12 @@ namespace StockManagement.ViewModels
             set { _selectedProduct = value; OnPropertyChanged(nameof(SelectedProduct)); }
         }
 
-        private string _searchKey;
-        public string SearchKey
-        {
-            get => _searchKey;
-            set { _searchKey = value; OnPropertyChanged(nameof(SearchKey)); RestFilteredProducts(); }
-        }
+        //private string _searchKey;
+        ////public string SearchKey
+        ////{
+        ////    get => _searchKey;
+        ////    set { _searchKey = value; OnPropertyChanged(nameof(SearchKey)); RestFilteredProducts(); }
+        ////}
 
         private int _totalInventoy;
         public int TotalInventoy
@@ -101,7 +101,7 @@ namespace StockManagement.ViewModels
 
         public ICommand SearchCommand { get; }
 
-       
+
 
         public HomeViewModel(NavigationStore navigationStore, NavbarViewModel navbarViewModel)
         {
@@ -125,10 +125,9 @@ namespace StockManagement.ViewModels
             SearchCommand = new SearchCommand(this);
         }
 
-        private void RestFilteredProducts()
+        protected override void RestFilteredProducts()
         {
-            if (string.IsNullOrEmpty(_searchKey)) FilteredProductsCategories = new ObservableCollection<ProductsCategoriesList>(ProductsCategories);
-
+            FilteredProductsCategories = new ObservableCollection<ProductsCategoriesList>(ProductsCategories);
         }
 
         private void CalStat(List<ProductsCategoriesList> list)
@@ -148,13 +147,13 @@ namespace StockManagement.ViewModels
                 {
                     outOfStock++;
                 }
-                if (product.Quantity < product.MinQuantity && product.Quantity != 0) 
+                if (product.Quantity < product.MinQuantity && product.Quantity != 0)
                 {
-                     belowMinQuantity++;
+                    belowMinQuantity++;
                 }
                 if (product.MaxQuantity - product.Quantity == 2 || product.MaxQuantity - product.Quantity == 1)
                 {
-                     closeToMaxQuantity++;
+                    closeToMaxQuantity++;
                 }
                 _totalInventoy = totalInventoy;
                 _outOfStock = outOfStock;

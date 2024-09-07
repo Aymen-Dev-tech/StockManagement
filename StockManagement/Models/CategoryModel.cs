@@ -21,37 +21,5 @@ namespace StockManagement.Models
         {
            Name = name;
         }
-
-        public void Create(int Code, string Name)
-        {
-           //insert to db
-        }
-
-        public List<ProductModel> GetAllProducts()
-        {
-            return new List<ProductModel>();
-        }
-
-        public List<CategoryModel> GetAllCateories()
-        {
-            return new List<CategoryModel>();
-
-        }
-
-        public void addProduct(int code)
-        {
-            //insert product to category
-        }
-
-        public void removeProduct()
-        {
-
-        }
-
-        public void moveProduct()
-        {
-
-        }
-
     }
 }
